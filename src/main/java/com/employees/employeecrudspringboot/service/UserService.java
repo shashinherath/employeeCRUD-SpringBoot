@@ -3,6 +3,7 @@ package com.employees.employeecrudspringboot.service;
 import com.employees.employeecrudspringboot.dto.UserDTO;
 import com.employees.employeecrudspringboot.model.User;
 import com.employees.employeecrudspringboot.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class UserService {
     @Autowired
     private UserRepository userRepository;
@@ -18,8 +20,8 @@ public class UserService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<UserDTO> getUsers() {
+    public List<UserDTO> getAllUsers() {
         List<User>userList = userRepository.findAll();
-        return modelMapper.map(userList, new TypeToken<List<UserDTO>>(){}.getType());
+        return modelMapper.map(userList, new TypeToken<List<UserDTO>>() {}.getType());
     }
 }
