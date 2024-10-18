@@ -3,13 +3,15 @@ package com.employees.employeecrudspringboot.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-@Document(collection = "user")
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class User {
-    private String id;
+    @Id
+    private int id;
     private String name;
 }
