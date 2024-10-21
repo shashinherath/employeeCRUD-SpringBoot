@@ -1,5 +1,6 @@
 package com.employees.employeecrudspringboot.model;
 
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import jakarta.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "\"user\"")
 public class User {
     @Id
     private int id;
