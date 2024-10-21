@@ -29,4 +29,9 @@ public class UserService {
         userRepository.save(modelMapper.map(userDTO, User.class));
         return userDTO;
     }
+
+    public UserDTO updateUser(UserDTO userDTO) {
+        userRepository.save(modelMapper.map(userDTO, User.class));
+        return userDTO;
+    }
 }
