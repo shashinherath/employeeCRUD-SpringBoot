@@ -34,4 +34,9 @@ public class UserService {
         userRepository.save(modelMapper.map(userDTO, User.class));
         return userDTO;
     }
+
+    public String deleteUser(UserDTO userDTO) {
+        userRepository.delete(modelMapper.map(userDTO, User.class));
+        return "User deleted successfully";
+    }
 }
